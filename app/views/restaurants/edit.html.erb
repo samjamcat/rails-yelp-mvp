@@ -1,25 +1,27 @@
-<h1>Edit a restaurant</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3"><h1>Edit a restaurant</h1>
 
-<%= form_for(@restaurant) do |f| %>
-    <% if @restaurant.errors.any? %>
-      <!-- [...] -->
-      <div id="error_explanation">
-        <ul>
-        <% @restaurant.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+        <%= simple_form_for(@restaurant) do |f| %>
+            <% if @restaurant.errors.any? %>
+              <!-- [...] -->
+              <div id="error_explanation">
+                <ul>
+                <% @restaurant.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+              <%= f.input :name %>
+              <%= f.input :address %>
+              <%= f.input :phone_number %>
+              <%= f.input :category, collection: Restaurant::CATEGORIES, prompt: "Choose one"  %>
+
+            <%= f.submit "Submit", class: "btn btn-primary" %>
+
         <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <%= f.label :name, "Edit name"  %><br>
-    <%= f.text_field :name %>
-    <%= f.label :address, "Edit status" %><br>
-    <%= f.text_field :address %>
-    <%= f.label :category, "Change category" %><br>
-    <%= f.text_field :category %>
-    <%= f.label :stars, "Edit status" %><br>
-    <%= f.number_field :stars %>
-
-    <%= f.submit %>
-<% end %>
+    </div>
+  </div>
+</div>
