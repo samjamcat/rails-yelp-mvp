@@ -7,7 +7,8 @@
         <p><%= @restaurant.category %></p>
         <p>***</p>
 
-      <%= link_to "Edit it", edit_restaurant_path(@restaurant), class: "btn btn-primary" %>
+      <%= link_to "Edit", edit_restaurant_path(@restaurant), class: "btn btn-primary" %>
+      <%= link_to "Delete", restaurant_path(@restaurant), method: :delete, class: "btn btn-primary" %>
 
     </div>
   </div>
