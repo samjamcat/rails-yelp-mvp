@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3"><h1><%= @review.content %></h1>
+
+        <h2><%= @review.content %></h2>
+        <p><%= @review.rating %></p>
+        <p>***</p>
+
+      <%= link_to "Edit", edit_review_path(@review), class: "btn btn-primary" %>
+      <%= link_to "Delete", review_path(@review), method: :delete, class: "btn btn-primary" %>
+
+    </div>
+  </div>
+</div>
